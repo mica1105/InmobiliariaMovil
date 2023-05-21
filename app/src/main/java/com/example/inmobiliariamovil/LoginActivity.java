@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onSensorChanged(SensorEvent event) {
             if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-                if (event.values[0] >= 4 || event.values[0]<= -4 && event.values[1]>= 4 || event.values[1]<= -4 && event.values[2]>= 4 || event.values[2]<= -4 ) {
+                if (event.values[0] >= 20 || event.values[0]<= -20) {
                     llamarInmobiliaria();
                 }
             }

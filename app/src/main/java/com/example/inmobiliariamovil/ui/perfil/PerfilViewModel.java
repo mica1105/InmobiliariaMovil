@@ -14,7 +14,9 @@ import com.example.inmobiliariamovil.request.ApiClient;
 
 public class PerfilViewModel extends ViewModel {
 
-    private MutableLiveData<Propietario> propietario;
+    private MutableLiveData<Propietario> usuario;
+    private MutableLiveData<Boolean> estado;
+    private MutableLiveData<String> textoBoton;
     private ApiClient apiClient;
 
     public PerfilViewModel() {
@@ -22,13 +24,38 @@ public class PerfilViewModel extends ViewModel {
     }
 
 
-    public LiveData<Propietario> getPropietario() {
-        if (propietario == null){
-            propietario= new MutableLiveData<>();
+    public LiveData<Propietario> getUsuario() {
+        if (usuario == null){
+            usuario= new MutableLiveData<>();
         }
-        return propietario;
+        return usuario;
     }
-    public void cargarPropietario(){
-        apiClient.obtenerUsuarioActual();
+    public LiveData<Boolean> getEstado() {
+        if (estado == null){
+            estado= new MutableLiveData<>();
+        }
+        return estado;
+    }
+
+    public LiveData<String> getTextoBoton(){
+        if (textoBoton== null){
+            textoBoton= new MutableLiveData<>();
+        }
+        return textoBoton;
+    }
+    public void accionBoton(String textoB, Propietario propietario){
+        if (textoB.equals("Editar")){
+            textoBoton.setValue("Guardar");
+            estado.setValue(true);
+        }
+        if (textoB.equals("Guardar")){
+            apiClient.actualizarPerfil(propietario);
+            textoBoton.setValue("Editar");
+            estado.setValue(false);
+
+        }
+    }
+    public void cargarUsuario(){
+        usuario.setValue(apiClient.obtenerUsuarioActual());
     }
 }

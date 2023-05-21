@@ -35,7 +35,7 @@ public class LoginViewModel extends AndroidViewModel {
         if (propietario != null){
             Intent i = new Intent(context, MainActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            i.putExtra("usuario", propietario);
+            //i.putExtra("usuario", propietario);
             context.startActivity(i);
         } else {
             error.setValue("*El email o password son incorrectos");
