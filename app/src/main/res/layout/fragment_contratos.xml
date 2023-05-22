@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.pagos.PagosFragment">
+    tools:context=".ui.pagos.ContratosFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPagos"
+        android:id="@+id/rvContratos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

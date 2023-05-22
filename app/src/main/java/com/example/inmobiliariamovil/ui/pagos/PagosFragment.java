@@ -1,38 +1,59 @@
 package com.example.inmobiliariamovil.ui.pagos;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inmobiliariamovil.R;
+import com.example.inmobiliariamovil.databinding.FragmentPagosBinding;
+import com.example.inmobiliariamovil.modelo.Pago;
+
+import java.util.List;
 
 public class PagosFragment extends Fragment {
 
     private PagosViewModel mViewModel;
-
-    public static PagosFragment newInstance() {
-        return new PagosFragment();
-    }
+    private FragmentPagosBinding binding;
+    private Context context;
+    private PagosAdapter adapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_pagos, container, false);
+        binding= FragmentPagosBinding.inflate(inflater, container, false);
+        View root= binding.getRoot();
+        context= root.getContext();
+        inicializar(root);
+        return root;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    private void inicializar(View root) {
         mViewModel = new ViewModelProvider(this).get(PagosViewModel.class);
-        // TODO: Use the ViewModel
+        mViewModel.getPagos().observe(getViewLifecycleOwner(), new Observer<List<Pago>>() {
+            @Override
+            public void onChanged(List<Pago> pagos) {
+                GridLayoutManager gridLayoutManager= new GridLayoutManager(context,1, GridLayoutManager.VERTICAL,false);
+                binding.rvPagos.setLayoutManager(gridLayoutManager);
+                adapter= new PagosAdapter(context,pagos,getLayoutInflater());
+                binding.rvPagos.setAdapter(adapter);
+            }
+        });
+        mViewModel.cargarPagos(getArguments());
     }
 
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

@@ -21,7 +21,7 @@
             android:icon="@drawable/ic_menu_inquilinos"
             android:title="@string/menu_inquilinos" />
         <item
-            android:id="@+id/nav_pagos"
+            android:id="@+id/nav_contratos"
             android:icon="@drawable/ic_menu_contratos"
             android:title="@string/menu_pagos" />
     </group>
