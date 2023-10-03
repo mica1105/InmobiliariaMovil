@@ -40,9 +40,9 @@ public class ContratoFragment extends Fragment {
         mViewModel.getContrato().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
             @Override
             public void onChanged(Contrato contrato) {
-                binding.tvCodigoContrato.setText(contrato.getIdContrato());
-                binding.tvFechaI.setText(contrato.getFechaInicio());
-                binding.tvFechaF.setText(contrato.getFechaFin());
+                binding.tvCodigoContrato.setText(contrato.getIdContrato()+"");
+                binding.tvFechaI.setText(contrato.getFechaInicio()+"");
+                binding.tvFechaF.setText(contrato.getFechaFin()+"");
                 binding.tvInmueble.setText("Inmueble en "+contrato.getInmueble().getDireccion());
                 binding.tvInquilino.setText(contrato.getInquilino().getNombre()+ " "+ contrato.getInquilino().getApellido());
                 binding.tvMonto.setText("$"+contrato.getMontoAlquiler());

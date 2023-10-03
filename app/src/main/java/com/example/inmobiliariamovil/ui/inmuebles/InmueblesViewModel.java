@@ -36,5 +36,4 @@ public class InmueblesViewModel extends AndroidViewModel {
         ArrayList<Inmueble> propiedades= api.obtnerPropiedades();
         inmuebles.setValue(propiedades);
     }
-
 }

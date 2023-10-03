@@ -44,6 +44,6 @@ public class ContratoViewModel extends AndroidViewModel {
     public void verPagos(){
         Bundle bundle= new Bundle();
         bundle.putSerializable("contrato",contratoActual);
-        Navigation.findNavController((Activity) context, R.id.nav_host_fragment_content_main).navigate(R.id.pagosFragment,bundle);
+        Navigation.findNavController((Activity) context,R.id.nav_host_fragment_content_main).navigate(R.id.pagosFragment, bundle);
     }
 }

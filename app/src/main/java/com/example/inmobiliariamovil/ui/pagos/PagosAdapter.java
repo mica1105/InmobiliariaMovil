@@ -44,11 +44,11 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Pago pago= pagos.get(position);
-        holder.etCodigo.setText(pago.getIdPago());
-        holder.etNroPago.setText(pago.getNumero());
-        holder.etContrato.setText(pago.getContrato().getIdContrato());
+        holder.etCodigo.setText(pago.getIdPago()+"");
+        holder.etNroPago.setText(pago.getNumero()+"");
+        holder.etContrato.setText(pago.getContrato().getIdContrato()+"");
         holder.etImporte.setText(pago.getImporte()+"");
-        holder.etFecha.setText(pago.getFechaDePago());
+        holder.etFecha.setText(pago.getFechaDePago()+"");
     }
 
     @Override
