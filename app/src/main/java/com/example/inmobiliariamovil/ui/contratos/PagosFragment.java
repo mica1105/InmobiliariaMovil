@@ -1,4 +1,4 @@
-package com.example.inmobiliariamovil.ui.pagos;
+package com.example.inmobiliariamovil.ui.contratos;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.inmobiliariamovil.R;
 import com.example.inmobiliariamovil.databinding.FragmentPagosBinding;
 import com.example.inmobiliariamovil.modelo.Pago;
 

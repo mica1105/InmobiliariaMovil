@@ -1,8 +1,10 @@
-package com.example.inmobiliariamovil;
+package com.example.inmobiliariamovil.ui.salir;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
@@ -25,7 +27,6 @@ public class LogoutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding= FragmentLogoutBinding.inflate(inflater,container,false);
-
         View root = binding.getRoot();
         mostrarDialogo(root);
         return root;
@@ -37,19 +38,18 @@ public class LogoutFragment extends Fragment {
                 .setMessage("¿Esta seguro que desea cerrar sesión?")
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        System.exit(0);
+                    public void onClick(DialogInterface dialog, int i) {
+
+                        getActivity().finishAndRemoveTask();
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Navigation.findNavController(getActivity(),R.id.nav_host_fragment_content_main).navigate(R.id.nav_perfil);
-
+                        Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.nav_perfil);
                     }
                 }).show();
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

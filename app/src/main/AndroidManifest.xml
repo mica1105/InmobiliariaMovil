@@ -5,8 +5,12 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,9 +22,11 @@
         android:theme="@style/Theme.InmobiliariaMovil"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDjb5BlKxyInyCELYq4RGNWhzTOsu6Gij8" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -34,8 +40,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.InmobiliariaMovil.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.InmobiliariaMovil.NoActionBar"></activity>
     </application>
 
 </manifest>

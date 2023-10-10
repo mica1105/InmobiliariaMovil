@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -23,6 +24,7 @@ public class InmuebleFragment extends Fragment {
 
     private InmuebleViewModel mViewModel;
     private FragmentInmuebleBinding binding;
+    private Inmueble miInmueble;
 
     public static InmuebleFragment newInstance() {
         return new InmuebleFragment();
@@ -42,6 +44,7 @@ public class InmuebleFragment extends Fragment {
         mViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
             public void onChanged(Inmueble inmueble) {
+                miInmueble= inmueble;
                 binding.tvDireccion.setText(inmueble.getDireccion());
                 binding.tvTipo.setText(inmueble.getTipo());
                 binding.tvUso.setText(inmueble.getUso());
@@ -56,6 +59,14 @@ public class InmuebleFragment extends Fragment {
             }
         });
         mViewModel.cargarInmueble(getArguments());
+        binding.cbDisponible.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean disponible= binding.cbDisponible.isChecked();
+                miInmueble.setEstado(disponible);
+                mViewModel.editarDisponibilidad(miInmueble);
+            }
+        });
     }
 
 }

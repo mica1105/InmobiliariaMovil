@@ -36,9 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{android.Manifest.permission.CALL_PHONE}, 1);
-        }
+        solicitarPerimisos();
         inicializar();
     }
 
@@ -82,6 +80,15 @@ public class LoginActivity extends AppCompatActivity {
         if (sensores.size()>0){
             Sensor acelerometro= sensores.get(0);
             manager.registerListener(listener, acelerometro,SensorManager.SENSOR_DELAY_GAME);
+        }
+    }
+    private void solicitarPerimisos(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                && checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED
+                && checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            requestPermissions(new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1000);
         }
     }
 
