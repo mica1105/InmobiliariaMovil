@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="negro_morado">#191719</color>
+    <color name="morado_oscuro">#3C1B43</color>
+    <color name="violeta">#B370B0</color>
+    <color name="lila">#BBA0CA</color>
+    <color name="bigaro">#C3C3E6</color>
+    <color name="cardo">#D1C8E1</color>
+
 </resources>

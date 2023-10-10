@@ -38,7 +38,7 @@ public class PagosAdapter extends RecyclerView.Adapter<PagosAdapter.ViewHolder> 
         holder.etCodigo.setText(pago.getIdPago()+"");
         holder.etNroPago.setText(pago.getNumero()+"");
         holder.etContrato.setText(pago.getContrato().getIdContrato()+"");
-        holder.etImporte.setText(pago.getImporte()+"");
+        holder.etImporte.setText("$"+pago.getImporte());
         holder.etFecha.setText(pago.getFechaDePago()+"");
     }
 

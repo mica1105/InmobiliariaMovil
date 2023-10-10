@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_degradado"
     tools:context=".ui.inquilinos.InquilinoFragment">
 
     <TextView
@@ -26,9 +27,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
         android:textStyle="bold"
-        android:hint="Código"
         android:enabled="false"
-        android:textColorHint="#9C27B0"
+        android:textColor="@color/negro_morado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCodigo" />
@@ -49,13 +49,12 @@
         android:id="@+id/etApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginTop="5dp"
-        android:hint="Apellido"
-        android:enabled="false"
-        android:textColorHint="#9C27B0"
         android:textStyle="bold"
+        android:enabled="false"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvApellido" />
 
@@ -75,13 +74,12 @@
         android:id="@+id/etNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginTop="5dp"
-        android:hint="Nombre"
-        android:enabled="false"
-        android:textColorHint="#9C27B0"
         android:textStyle="bold"
+        android:enabled="false"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
@@ -105,9 +103,8 @@
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
         android:textStyle="bold"
-        android:hint="DNI"
         android:enabled="false"
-        android:textColorHint="#9C27B0"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDni" />
 
@@ -127,13 +124,12 @@
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginTop="5dp"
-        android:hint="E-Mail"
-        android:enabled="false"
-        android:textColorHint="#9C27B0"
         android:textStyle="bold"
+        android:enabled="false"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
@@ -153,13 +149,12 @@
         android:id="@+id/etTelefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginTop="5dp"
-        android:hint="Telefono"
-        android:enabled="false"
-        android:textColorHint="#9C27B0"
         android:textStyle="bold"
+        android:enabled="false"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
     <TextView
@@ -178,13 +173,12 @@
         android:id="@+id/etGarante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginTop="5dp"
-        android:hint="Garante"
-        android:enabled="false"
-        android:textColorHint="#9C27B0"
         android:textStyle="bold"
+        android:enabled="false"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGarante" />
 
@@ -204,13 +198,12 @@
         android:id="@+id/etTelGarante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginTop="5dp"
-        android:hint="Telefono Garante"
-        android:enabled="false"
-        android:textColorHint="#9C27B0"
         android:textStyle="bold"
+        android:enabled="false"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTelGarante" />
 
