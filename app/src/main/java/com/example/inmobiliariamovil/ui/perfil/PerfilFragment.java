@@ -22,19 +22,20 @@ public class PerfilFragment extends Fragment {
 
     private FragmentPerfilBinding binding;
     private PerfilViewModel perfilViewModel;
+    private Propietario usuario;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         perfilViewModel = new ViewModelProvider(this).get(PerfilViewModel.class);
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        inicializar(root);
         perfilViewModel.getUsuario().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
                 if(propietario == null){
                     Log.d("error", "el usuario es nulo");
                 }else {
+                    usuario= propietario;
                     binding.etCodigo.setText(propietario.getId() + "");
                     binding.etDni.setText(propietario.getDni() + "");
                     binding.etApellido.setText(propietario.getApellido());
@@ -52,8 +53,6 @@ public class PerfilFragment extends Fragment {
                 binding.etDni.setEnabled(aBoolean);
                 binding.etApellido.setEnabled(aBoolean);
                 binding.etNombre.setEnabled(aBoolean);
-                binding.etEmail.setEnabled(aBoolean);
-                binding.etPassword.setEnabled(aBoolean);
                 binding.etTelefono.setEnabled(aBoolean);
             }
         });
@@ -64,6 +63,7 @@ public class PerfilFragment extends Fragment {
             }
         });
         perfilViewModel.cargarUsuario();
+        inicializar(root);
         return root;
     }
 
@@ -72,16 +72,13 @@ public class PerfilFragment extends Fragment {
         binding.btEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Propietario propietario= new Propietario();
-                propietario.setDni(Long.parseLong(binding.etDni.getText().toString()));
-                propietario.setNombre(binding.etNombre.getText().toString());
-                propietario.setApellido(binding.etApellido.getText().toString());
-                propietario.setEmail(binding.etEmail.getText().toString());
-                propietario.setContraseña(binding.etPassword.getText().toString());
-                propietario.setTelefono(binding.etTelefono.getText().toString());
+                usuario.setDni(Long.parseLong(binding.etDni.getText().toString()));
+                usuario.setNombre(binding.etNombre.getText().toString());
+                usuario.setApellido(binding.etApellido.getText().toString());
+                usuario.setTelefono(binding.etTelefono.getText().toString());
                 String texto= binding.btEditar.getText().toString();
                 if (texto!= null){
-                    perfilViewModel.accionBoton(texto,propietario);
+                    perfilViewModel.accionBoton(texto,usuario);
                 }
             }
         });

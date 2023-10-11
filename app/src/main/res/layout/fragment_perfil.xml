@@ -26,8 +26,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:textStyle="bold"
         android:enabled="false"
+        android:textStyle="bold"
         android:textColor="@color/negro_morado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,8 +52,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:textStyle="bold"
         android:enabled="false"
+        android:textStyle="bold"
         android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDni" />
@@ -77,8 +77,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        android:textStyle="bold"
         android:enabled="false"
+        android:textStyle="bold"
         android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvApellido" />
@@ -103,8 +103,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
-        android:textColor="@color/negro_morado"
         android:textStyle="bold"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
     <TextView
@@ -127,8 +127,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
-        android:textColor="@color/negro_morado"
         android:textStyle="bold"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
 
@@ -152,8 +152,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
-        android:textColor="@color/negro_morado"
         android:textStyle="bold"
+        android:textColor="@color/negro_morado"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
@@ -177,8 +177,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginTop="2dp"
         android:enabled="false"
-        android:textColor="@color/negro_morado"
         android:textStyle="bold"
+        android:textColor="@color/negro_morado"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
